@@ -23,13 +23,42 @@ function App() {
     <div className="app">
       <header className="hero">
         <div className="logo-container">
-          <svg className="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2"/>
-            <path d="M 30 50 L 50 30 L 70 50 L 50 70 Z" fill="currentColor"/>
-          </svg>
+          <span style={{
+            display: 'inline-block',
+            padding: '0.5rem 1rem',
+            background: 'rgba(78, 42, 154, 0.5)',
+            border: '1px solid rgba(117, 83, 255, 0.3)',
+            borderRadius: '9999px',
+            fontSize: '0.875rem',
+            fontWeight: '500',
+            marginBottom: '1.5rem'
+          }}>
+            ⚡ Powered by Sentry.New
+          </span>
         </div>
-        <h1 className="title">sentry.new</h1>
-        <p className="subtitle">React + Node.js Template</p>
+        <h1 className="title" style={{
+          fontSize: '3.5rem',
+          fontWeight: '900',
+          marginBottom: '0.5rem'
+        }}>
+          React + Node{" "}
+          <span style={{
+            background: 'linear-gradient(to right, #7553FF, #A737B4, #7553FF)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Template
+          </span>
+        </h1>
+        <p className="subtitle" style={{
+          color: '#9E86FF',
+          fontSize: '1.125rem',
+          maxWidth: '600px',
+          margin: '0 auto'
+        }}>
+          A production-ready full-stack template with Sentry monitoring, React frontend, and Express backend.
+        </p>
       </header>
 
       <main className="content">
@@ -60,13 +89,47 @@ function App() {
         </div>
 
         <div className="cta">
-          <h2>Get Started</h2>
-          <div className="code-block">
-            <code>npm run dev</code>
-          </div>
-          <p className="help-text">
-            Edit <code>client/src/App.jsx</code> or <code>server/index.js</code> to get started
+          <h2>🛡️ Sentry Integration</h2>
+          <p className="cta-description">
+            Add error tracking and performance monitoring to both frontend and backend
           </p>
+
+          <div className="code-section">
+            <div className="code-label">Install Sentry SDK:</div>
+            <pre className="code-block">npm install @sentry/react @sentry/node</pre>
+          </div>
+
+          <div className="code-section">
+            <div className="code-label">Initialize in your React app (client/src/main.jsx):</div>
+            <pre className="code-block-large">{`import * as Sentry from "@sentry/react";
+
+Sentry.init({
+  dsn: "YOUR_SENTRY_DSN",
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  tracesSampleRate: 1.0,
+
+  // Capture Replay for 10% of all sessions,
+  // plus for 100% of sessions with an error
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+
+  integrations: [
+    Sentry.browserTracingIntegration(),
+    Sentry.replayIntegration(),
+  ],
+});`}</pre>
+          </div>
+
+          <a
+            href="https://docs.sentry.io/platforms/javascript/guides/react/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="docs-link"
+          >
+            View full documentation →
+          </a>
         </div>
       </main>
 

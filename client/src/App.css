@@ -2,12 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #181225; /* Rich Black */
+  color: white;
 }
 
 .hero {
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #181225; /* Rich Black */
   color: white;
 }
 
@@ -54,16 +56,19 @@
 }
 
 .status-card {
-  background: #f8f9fa;
+  background: rgba(78, 42, 154, 0.2); /* Dk Blurple with transparency */
+  border: 2px solid rgba(117, 83, 255, 0.3); /* Blurple */
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .status-card h2 {
   margin-top: 0;
-  color: #2d3748;
+  color: #7553FF; /* Blurple */
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .status-indicator {
@@ -103,9 +108,9 @@
 .server-message {
   margin-top: 1rem;
   padding: 1rem;
-  background: white;
+  background: rgba(54, 22, 107, 0.3); /* Dk Violet */
   border-radius: 8px;
-  color: #4a5568;
+  color: #9E86FF; /* Lt Blurple */
 }
 
 .features {
@@ -116,72 +121,127 @@
 }
 
 .feature-card {
-  background: white;
-  border: 2px solid #e2e8f0;
+  background: rgba(24, 18, 37, 0.8); /* Rich Black */
+  border: 2px solid rgba(78, 42, 154, 0.5); /* Dk Blurple */
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
+  border-color: #7553FF; /* Blurple */
+  box-shadow: 0 8px 16px rgba(117, 83, 255, 0.3);
 }
 
 .feature-card h3 {
   margin-top: 0;
-  color: #2d3748;
+  color: #7553FF; /* Blurple */
   font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .feature-card p {
   margin-bottom: 0;
-  color: #718096;
+  color: #9E86FF; /* Lt Blurple */
 }
 
 .cta {
-  text-align: center;
+  text-align: left;
   padding: 2rem;
-  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  background: rgba(78, 42, 154, 0.2); /* Dk Blurple */
+  border: 2px solid rgba(117, 83, 255, 0.3); /* Blurple */
   border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .cta h2 {
-  color: #2d3748;
+  color: #7553FF; /* Blurple */
   margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cta-description {
+  color: #9E86FF; /* Lt Blurple */
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.code-section {
+  margin-bottom: 1.5rem;
+}
+
+.code-label {
+  color: #9E86FF; /* Lt Blurple */
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .code-block {
-  background: #2d3748;
-  color: #68d391;
-  padding: 1rem 2rem;
+  background: rgba(54, 22, 107, 0.4); /* Dk Violet */
+  border: 1px solid rgba(117, 83, 255, 0.3);
+  color: #7553FF; /* Blurple */
+  padding: 1rem 1.5rem;
   border-radius: 8px;
-  display: inline-block;
   font-family: 'Courier New', monospace;
-  font-size: 1.25rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.code-block-large {
+  background: rgba(54, 22, 107, 0.4); /* Dk Violet */
+  border: 1px solid rgba(117, 83, 255, 0.3);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.6;
+}
+
+.docs-link {
+  color: #7553FF; /* Blurple */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  transition: color 0.2s;
+}
+
+.docs-link:hover {
+  color: #9E86FF; /* Lt Blurple */
 }
 
 .help-text {
-  color: #718096;
+  color: #9E86FF; /* Lt Blurple */
   margin-top: 1rem;
 }
 
 .help-text code {
-  background: #edf2f7;
+  background: rgba(54, 22, 107, 0.5);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9em;
-  color: #667eea;
+  color: #7553FF;
 }
 
 .footer {
-  background: #2d3748;
-  color: #a0aec0;
+  background: rgba(24, 18, 37, 0.95); /* Rich Black */
+  color: #9E86FF; /* Lt Blurple */
   padding: 2rem;
   text-align: center;
   margin-top: auto;
+  border-top: 1px solid rgba(78, 42, 154, 0.5);
 }
 
 .footer p {
