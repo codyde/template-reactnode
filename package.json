@@ -1,0 +1,18 @@
+{
+  "name": "template-reactnode",
+  "version": "1.0.0",
+  "description": "React + Node.js template for distributed application deployment",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["react", "nodejs", "vite", "express", "template"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
